@@ -46,12 +46,6 @@ const getDate = async(createdAt,updatedAt)=>{
 
 
 module.exports = {
-    // createTable,
-    createUser,
-    getUserId,
-    getAllUsers,
-    updateUser,
-    deleteUser,
     getName,
     sorting,
     fullTextSearch,
