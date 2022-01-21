@@ -31,16 +31,23 @@ const getDate = async(req,res)=>{
     res.send(result);
 }
 
+
+const allData = async(req,res)=>{
+    const payload = (req.body.firstName || req.body.lastName || req.body.email || req.body.filename)
+    const fieldname = req.body.fieldname;
+    const order = req.body.order;
+    const limit = req.body.limit;
+    const result = await userService.allData(payload,fieldname,order,limit);
+    console.log('77777777777777777777777777777777777',result);
+    res.send(result);
+
+}
+
   module.exports = {
-    createTable,
-    createUser,
-    getUserId,
-    updateUser,
-    deleteUser,
-    getAllUsers,
     getName,
     sorting,
     fullTextSearch,
     getDate,
+    allData,
     
   }

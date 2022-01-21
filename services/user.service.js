@@ -44,10 +44,21 @@ const getDate = async(createdAt,updatedAt)=>{
     })
 }
 
-
+const allData = async(payload,fieldname,order,limit)=>{
+    return new Promise((res)=>{
+        db.query(`select * from employees where ${fieldname} LIKE '${payload}%' ORDER BY ${fieldname} ${order} LIMIT ${limit}`, (err,rows)=>{
+        if(err){
+            console.log('error',err);
+        }
+        return res(rows);
+        })
+    })
+}
 module.exports = {
+
     getName,
     sorting,
     fullTextSearch,
     getDate,
+    allData,
 };

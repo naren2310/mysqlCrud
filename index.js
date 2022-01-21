@@ -3,7 +3,7 @@ const app = express();
 const port = 9000;
 app.use(express.json());
 
-const router = require('../crs/routes/user.route');
+const router = require('./routes/user.route')
 
 
 
